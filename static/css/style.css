@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f7f4f4;
+  color: #000;
+}
+
+svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.wrapper {
+  max-width: 87.5rem;
+  margin: 0 auto;
+}
+@media (max-width: 87.4375em) {
+  .wrapper {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.flex {
+  display: flex;
+}
+.flex-d-c {
+  flex-direction: column;
+}
+.flex-g {
+  flex-grow: 1;
+}
+.flex-jc-s {
+  justify-content: flex-start;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-jc-e {
+  justify-content: flex-end;
+}
+.flex-jc-sb {
+  justify-content: space-between;
+}
+.flex-jc-a {
+  justify-content: space-around;
+}
+.flex-jc-evn {
+  justify-content: space-evenly;
+}
+.flex-ai-s {
+  align-items: start;
+}
+.flex-ai-c {
+  align-items: center;
+}
+.flex-ai-e {
+  align-items: end;
+}
+
+.py-32 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.pt-32 {
+  padding-top: 2rem;
+}
+
+.pb-32 {
+  padding-bottom: 2rem;
+}
+
+.p-12 {
+  padding: 0.75rem;
+}
+
+.py-12 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.g-8 {
+  gap: 0.5rem;
+}
+
+.g-12 {
+  gap: 0.75rem;
+}
+
+.g-16 {
+  gap: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.875rem);
+}
+
+h2 {
+  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.375rem, 0.75rem + 1.5vw, 1.375rem);
+}
+
+p {
+  margin-top: 0;
+}
+
+.navbar {
+  background-color: #fff;
+  padding: 0.75rem 0;
+}
+.navbar nav .logo h3 {
+  margin: 0;
+  color: rgb(10, 171, 120);
+}
+.navbar nav .links li a {
+  color: rgb(10, 171, 120);
+}
+.navbar nav .links li span {
+  color: rgb(10, 171, 120);
+  cursor: pointer;
+}
+
+main.home .content {
+  max-width: 25rem;
+  margin: 0 auto;
+  margin-top: 6.25rem;
+}
+main.home .content form {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1333333333);
+  padding: 2rem;
+  border-radius: 0.25rem;
+}
+main.home .content form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+main.home .content form input {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #b7b7b7;
+  outline: transparent;
+  border-radius: 0.25rem;
+}
+main.home .content form .submit {
+  padding-top: 1.375rem;
+}
+main.home .content form .submit button {
+  padding: 0.5rem 1.125rem;
+  background-color: rgb(10, 171, 120);
+  border: none;
+  outline: transparent;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+
+main.form-build .form-save {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 0.75rem;
+}
+main.form-build .form-save button {
+  padding: 0.75rem 1.75rem;
+  margin-right: 0;
+  cursor: pointer;
+  background-color: rgb(10, 171, 120);
+  color: #fff;
+  border: none;
+  outline: transparent;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+main.form-build .content {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  gap: 1rem;
+  min-height: 80vh;
+}
+main.form-build .content #form-toolbar .head {
+  background-color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}
+main.form-build .content #form-toolbar .head span {
+  font-size: 1.125rem;
+}
+main.form-build .content #form-toolbar ul.form-fields-list {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+main.form-build .content #form-toolbar ul.form-fields-list li {
+  position: relative;
+  outline: 1px solid #b7b7b7;
+  background-color: #fff;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: all-scroll;
+}
+main.form-build .content #form-toolbar ul.form-fields-list li svg,
+main.form-build .content #form-toolbar ul.form-fields-list li small {
+  color: gray;
+  stroke: gray;
+}
+main.form-build .content #form-toolbar ul.form-fields-list li span {
+  pointer-events: none;
+}
+main.form-build .content #form-toolbar ul.form-fields-list li .form-element {
+  display: none;
+}
+main.form-build .content #builder-template #form-builder {
+  height: 100%;
+}
+main.form-build .content #builder-template #form-builder #form {
+  width: 40.625rem;
+  min-height: 21.875rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(59, 59, 59, 0.0588235294);
+  padding-bottom: 2rem;
+}
+main.form-build .content #builder-template #form-builder #form #form-title {
+  cursor: pointer;
+}
+main.form-build .content #builder-template #form-builder #form #form-title:hover {
+  background-color: rgba(43, 218, 93, 0.1411764706);
+  cursor: pointer;
+}
+main.form-build .content #builder-template #form-builder #form #form-title.active {
+  background: rgba(43, 218, 93, 0.5215686275);
+}
+main.form-build .content #builder-template #form-builder #form #form-title span {
+  pointer-events: none;
+}
+main.form-build .content #builder-template #form-builder #form #form-elements .form-control {
+  position: relative;
+  padding: 12px 22px;
+  font-size: 22px;
+  cursor: pointer;
+  display: block;
+}
+main.form-build .content #builder-template #form-builder #form #form-elements .form-control svg {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  z-index: 1000;
+  cursor: pointer;
+  display: none;
+}
+main.form-build .content #builder-template #form-builder #form #form-elements .form-control:hover svg {
+  display: block;
+}
+main.form-build .content #builder-template #form-builder #form #form-elements .form-control:hover {
+  background-color: rgba(43, 218, 93, 0.1411764706);
+  cursor: pointer;
+}
+main.form-build .content #builder-template #form-builder #form #form-elements .form-control.active {
+  background: rgba(43, 218, 93, 0.5215686275);
+}
+main.form-build .content #builder-template #form-builder #form #form-elements .form-control label {
+  font-size: 1rem;
+  display: block;
+  cursor: pointer;
+  pointer-events: none;
+}
+main.form-build .content #builder-template #form-builder #form #form-elements .form-control input,
+main.form-build .content #builder-template #form-builder #form #form-elements .form-control textarea {
+  outline: transparent;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #b7b7b7;
+  cursor: pointer;
+  pointer-events: none;
+}
+main.form-build .content #builder-template #form-builder #form #form-elements .form-control input[type=number] {
+  appearance: none;
+}
+main.form-build .content #builder-template #form-builder #form #form-submit {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.form-build .content #builder-template #form-builder #form #form-submit button {
+  padding: 0.75rem 2rem;
+  border: none;
+  outline: transparent;
+  background-color: rgb(10, 171, 120);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1.125rem;
+  color: #fff;
+}
+main.form-build .content #properties .head {
+  background-color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}
+main.form-build .content #properties .head span {
+  font-size: 1.125rem;
+}
+main.form-build .content #properties #properties-pannel {
+  margin-top: 0.75rem;
+  background-color: #fff;
+  padding: 1rem;
+}
+main.form-build .content #properties #properties-pannel .help-text {
+  font-weight: 300;
+}
+main.form-build .content #properties #properties-pannel form#title .form-control:not(:last-child), main.form-build .content #properties #properties-pannel form#submitval .form-control:not(:last-child), main.form-build .content #properties #properties-pannel form#text .form-control:not(:last-child), main.form-build .content #properties #properties-pannel form#password .form-control:not(:last-child), main.form-build .content #properties #properties-pannel form#textarea .form-control:not(:last-child), main.form-build .content #properties #properties-pannel form#number .form-control:not(:last-child), main.form-build .content #properties #properties-pannel form#email .form-control:not(:last-child) {
+  margin-bottom: 1rem;
+}
+main.form-build .content #properties #properties-pannel form#title .form-control label, main.form-build .content #properties #properties-pannel form#submitval .form-control label, main.form-build .content #properties #properties-pannel form#text .form-control label, main.form-build .content #properties #properties-pannel form#password .form-control label, main.form-build .content #properties #properties-pannel form#textarea .form-control label, main.form-build .content #properties #properties-pannel form#number .form-control label, main.form-build .content #properties #properties-pannel form#email .form-control label {
+  display: block;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+main.form-build .content #properties #properties-pannel form#title .form-control input, main.form-build .content #properties #properties-pannel form#submitval .form-control input, main.form-build .content #properties #properties-pannel form#text .form-control input, main.form-build .content #properties #properties-pannel form#password .form-control input, main.form-build .content #properties #properties-pannel form#textarea .form-control input, main.form-build .content #properties #properties-pannel form#number .form-control input, main.form-build .content #properties #properties-pannel form#email .form-control input {
+  width: 100%;
+  padding: 0.625rem;
+  outline: transparent;
+  border: 1px solid #b7b7b7;
+  border-radius: 0.25rem;
+}
+main.form-build .content #properties #properties-pannel form#title .form-control input::-webkit-outer-spin-button,
+main.form-build .content #properties #properties-pannel form#title .form-control input::-webkit-inner-spin-button, main.form-build .content #properties #properties-pannel form#submitval .form-control input::-webkit-outer-spin-button,
+main.form-build .content #properties #properties-pannel form#submitval .form-control input::-webkit-inner-spin-button, main.form-build .content #properties #properties-pannel form#text .form-control input::-webkit-outer-spin-button,
+main.form-build .content #properties #properties-pannel form#text .form-control input::-webkit-inner-spin-button, main.form-build .content #properties #properties-pannel form#password .form-control input::-webkit-outer-spin-button,
+main.form-build .content #properties #properties-pannel form#password .form-control input::-webkit-inner-spin-button, main.form-build .content #properties #properties-pannel form#textarea .form-control input::-webkit-outer-spin-button,
+main.form-build .content #properties #properties-pannel form#textarea .form-control input::-webkit-inner-spin-button, main.form-build .content #properties #properties-pannel form#number .form-control input::-webkit-outer-spin-button,
+main.form-build .content #properties #properties-pannel form#number .form-control input::-webkit-inner-spin-button, main.form-build .content #properties #properties-pannel form#email .form-control input::-webkit-outer-spin-button,
+main.form-build .content #properties #properties-pannel form#email .form-control input::-webkit-inner-spin-button {
+  display: none;
+}
+main.form-build .content #properties #properties-pannel form#title .form-control input[type=number], main.form-build .content #properties #properties-pannel form#submitval .form-control input[type=number], main.form-build .content #properties #properties-pannel form#text .form-control input[type=number], main.form-build .content #properties #properties-pannel form#password .form-control input[type=number], main.form-build .content #properties #properties-pannel form#textarea .form-control input[type=number], main.form-build .content #properties #properties-pannel form#number .form-control input[type=number], main.form-build .content #properties #properties-pannel form#email .form-control input[type=number] {
+  -moz-appearance: textfield;
+}
+main.form-build .content #properties #properties-pannel form#title .form-control input[type=checkbox], main.form-build .content #properties #properties-pannel form#submitval .form-control input[type=checkbox], main.form-build .content #properties #properties-pannel form#text .form-control input[type=checkbox], main.form-build .content #properties #properties-pannel form#password .form-control input[type=checkbox], main.form-build .content #properties #properties-pannel form#textarea .form-control input[type=checkbox], main.form-build .content #properties #properties-pannel form#number .form-control input[type=checkbox], main.form-build .content #properties #properties-pannel form#email .form-control input[type=checkbox] {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+main.form-build .content #properties #properties-pannel form#title .form-control button.placement, main.form-build .content #properties #properties-pannel form#submitval .form-control button.placement, main.form-build .content #properties #properties-pannel form#text .form-control button.placement, main.form-build .content #properties #properties-pannel form#password .form-control button.placement, main.form-build .content #properties #properties-pannel form#textarea .form-control button.placement, main.form-build .content #properties #properties-pannel form#number .form-control button.placement, main.form-build .content #properties #properties-pannel form#email .form-control button.placement {
+  border: none;
+  padding: 0.4375rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: rgb(10, 171, 120);
+  color: #fff;
+}
+main.form-build .content #properties #properties-pannel form#title .delete-element, main.form-build .content #properties #properties-pannel form#submitval .delete-element, main.form-build .content #properties #properties-pannel form#text .delete-element, main.form-build .content #properties #properties-pannel form#password .delete-element, main.form-build .content #properties #properties-pannel form#textarea .delete-element, main.form-build .content #properties #properties-pannel form#number .delete-element, main.form-build .content #properties #properties-pannel form#email .delete-element {
+  background-color: red;
+  padding: 0.75rem 1.125rem;
+  border: none;
+  outline: transparent;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 0.25rem;
+}
+
+main.dashboard .content {
+  display: grid;
+  gap: 1rem;
+}
+main.dashboard .content li {
+  background-color: #fff;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.0941176471);
+  width: 31.25rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main.dashboard .content li .view {
+  background-color: rgb(10, 171, 120);
+  padding: 0.25rem 0.75rem;
+  color: #fff;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+main.form .content {
+  min-height: 80vh;
+}
+main.form .content #form-template {
+  height: 100%;
+}
+main.form .content #form-template #form {
+  margin: 0 auto;
+  width: 40.625rem;
+  min-height: 12.5rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(59, 59, 59, 0.0588235294);
+  padding-bottom: 2rem;
+}
+main.form .content #form-template #form #form-elements .form-control {
+  position: relative;
+  padding: 12px 22px;
+  font-size: 22px;
+  cursor: pointer;
+  display: block;
+}
+main.form .content #form-template #form #form-elements .form-control label {
+  font-size: 1rem;
+  display: block;
+  cursor: pointer;
+}
+main.form .content #form-template #form #form-elements .form-control input,
+main.form .content #form-template #form #form-elements .form-control textarea {
+  outline: transparent;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #b7b7b7;
+}
+main.form .content #form-template #form #form-elements .form-control input[type=number] {
+  appearance: none;
+}
+main.form .content #form-template #form #form-submit {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main.form .content #form-template #form #form-submit button {
+  padding: 0.75rem 2rem;
+  border: none;
+  outline: transparent;
+  background-color: rgb(10, 171, 120);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1.125rem;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

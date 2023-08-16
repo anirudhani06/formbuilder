@@ -1,0 +1,237 @@
+@use '../utils' as *;
+
+main.form-build {
+  .form-save {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: rem(12);
+    button {
+      padding: rem(12) rem(28);
+      margin-right: 0;
+      cursor: pointer;
+      background-color: $ColorMain;
+      color: $ColorPrimary;
+      border: none;
+      outline: transparent;
+      cursor: pointer;
+      border-radius: rem(4);
+    }
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+    gap: rem(16);
+    min-height: 80vh;
+    #form-toolbar {
+      .head {
+        background-color: $ColorPrimary;
+        text-align: center;
+        padding: rem(12);
+        border-radius: rem(4);
+
+        span {
+          font-size: $f-md;
+        }
+      }
+      ul.form-fields-list {
+        margin-top: rem(16);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(16);
+        li {
+          position: relative;
+          outline: 1px solid $ColorGrayLight;
+          background-color: $ColorPrimary;
+          padding: rem(12);
+          border-radius: rem(4);
+          font-size: $f-sm;
+          font-weight: 300;
+          display: flex;
+          align-items: center;
+          gap: rem(8);
+          cursor: all-scroll;
+
+          svg,
+          small {
+            color: $ColorGray;
+            stroke: $ColorGray;
+          }
+          span {
+            pointer-events: none;
+          }
+          .form-element {
+            display: none;
+          }
+        }
+      }
+    }
+    #builder-template {
+      #form-builder {
+        height: 100%;
+        #form {
+          width: rem(650);
+          min-height: rem(350);
+          background-color: $ColorPrimary;
+          box-shadow: 0 0 10px #3b3b3b0f;
+          padding-bottom: rem(32);
+          #form-title {
+            cursor: pointer;
+            &:hover {
+              background-color: #2bda5d24;
+              cursor: pointer;
+            }
+            &.active {
+              background: #2bda5d85;
+            }
+            span {
+              pointer-events: none;
+            }
+          }
+          #form-elements {
+            .form-control {
+              position: relative;
+              padding: 12px 22px;
+              font-size: 22px;
+              cursor: pointer;
+              display: block;
+
+              svg {
+                position: absolute;
+                right: rem(8);
+                top: rem(8);
+                z-index: 1000;
+                cursor: pointer;
+                display: none;
+              }
+              &:hover {
+                svg {
+                  display: block;
+                }
+              }
+
+              &:hover {
+                background-color: #2bda5d24;
+                cursor: pointer;
+              }
+              &.active {
+                background: #2bda5d85;
+              }
+              label {
+                font-size: rem(16);
+                display: block;
+                cursor: pointer;
+                pointer-events: none;
+              }
+              input,
+              textarea {
+                outline: transparent;
+                width: 100%;
+                padding: rem(8);
+                border-radius: rem(4);
+                border: 1px solid $ColorGrayLight;
+                cursor: pointer;
+                pointer-events: none;
+              }
+              input[type='number'] {
+                appearance: none;
+              }
+            }
+          }
+          #form-submit {
+            padding-top: rem(32);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button {
+              padding: rem(12) rem(32);
+              border: none;
+              outline: transparent;
+              background-color: $ColorMain;
+              border-radius: rem(4);
+              cursor: pointer;
+              font-size: $f-md;
+              color: $ColorPrimary;
+            }
+          }
+        }
+      }
+    }
+    #properties {
+      .head {
+        background-color: $ColorPrimary;
+        text-align: center;
+        padding: rem(12);
+        border-radius: rem(4);
+
+        span {
+          font-size: $f-md;
+        }
+      }
+      #properties-pannel {
+        margin-top: rem(12);
+
+        background-color: $ColorPrimary;
+        padding: rem(16);
+        .help-text {
+          font-weight: 300;
+        }
+        form {
+          &#title,
+          &#submitval,
+          &#text,
+          &#password,
+          &#textarea,
+          &#number,
+          &#email {
+            .form-control {
+              &:not(:last-child) {
+                margin-bottom: rem(16);
+              }
+              label {
+                display: block;
+                font-weight: 300;
+                margin-bottom: rem(8);
+              }
+              input {
+                width: 100%;
+                padding: rem(10);
+                outline: transparent;
+                border: 1px solid $ColorGrayLight;
+                border-radius: rem(4);
+              }
+              input::-webkit-outer-spin-button,
+              input::-webkit-inner-spin-button {
+                display: none;
+              }
+              input[type='number'] {
+                -moz-appearance: textfield;
+              }
+              input[type='checkbox'] {
+                width: rem(20);
+                height: rem(20);
+              }
+              button.placement {
+                border: none;
+                padding: rem(7) rem(16);
+                cursor: pointer;
+                border-radius: rem(4);
+                background-color: $ColorMain;
+                color: $ColorPrimary;
+              }
+            }
+            .delete-element {
+              background-color: $ColorRed;
+              padding: rem(12) rem(18);
+              border: none;
+              outline: transparent;
+              cursor: pointer;
+              color: $ColorPrimary;
+              border-radius: rem(4);
+            }
+          }
+        }
+      }
+    }
+  }
+}

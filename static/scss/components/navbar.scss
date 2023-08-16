@@ -1,0 +1,26 @@
+@use '../utils' as *;
+
+.navbar {
+  background-color: $ColorPrimary;
+  padding: rem(12) 0;
+  nav {
+    .logo {
+      h3 {
+        margin: 0;
+        color: $ColorMain;
+      }
+    }
+    .links {
+      li {
+        a {
+          color: $ColorMain;
+        }
+
+        span {
+          color: $ColorMain;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

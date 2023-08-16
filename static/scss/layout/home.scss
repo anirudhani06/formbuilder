@@ -1,0 +1,39 @@
+@use '../utils' as *;
+
+main.home {
+  .content {
+    max-width: rem(400);
+    margin: 0 auto;
+    margin-top: rem(100);
+    form {
+      background-color: $ColorPrimary;
+      box-shadow: 0 0 10px #00000022;
+      padding: rem(32);
+      border-radius: rem(4);
+      label {
+        display: block;
+        margin-bottom: rem(8);
+      }
+      input {
+        width: 100%;
+        padding: rem(10);
+        border: 1px solid $ColorGrayLight;
+        outline: transparent;
+        border-radius: rem(4);
+      }
+      .submit {
+        padding-top: rem(22);
+        button {
+          padding: rem(8) rem(18);
+          background-color: $ColorMain;
+          border: none;
+          outline: transparent;
+          cursor: pointer;
+          color: $ColorPrimary;
+          font-size: $f-sm;
+          border-radius: rem(4);
+        }
+      }
+    }
+  }
+}

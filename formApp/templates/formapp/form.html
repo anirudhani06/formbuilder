@@ -1,0 +1,73 @@
+{% extends 'main.html' %} {% block content %}
+<main class="wrapper form py-12">
+  <div class="content">
+    <section id="form-template">
+      <form
+        method="post"
+        id="form"
+        style="display: flex; flex-direction: column; justify-content: space-between;width: 450px;"
+      >
+        <div
+          class="form-element"
+          style="padding: 22px; font-size: 22px; border-bottom: 1px solid #b7b7b7"
+        >
+          <span id="form-title-value">{{form.name}}</span>
+        </div>
+        <div id="form-elements" style="flex-grow: 1">
+          {% for field in form.fields.all %}
+          <div class="form-control">
+            <label for="" style="cursor: pointer; margin-bottom: 6px">{{field.label}}</label>
+            {% if field.required == True %}
+              {% if field.field_type == 'textarea' %}
+              <textarea
+                name="{{field.name}}"
+                id=""
+                rows="{{field.rows}}"
+                placeholder="{{field.placeholder}}"
+                minlength="{{field.min_len}}"
+                maxlength="{{field.max_len}}"
+                required
+              ></textarea>
+              {% else %}
+              <input
+                type="{{field.field_type}}"
+                placeholder="{{field.placeholder}}"
+                class="input-field"
+                maxlength="{{field.max_len}}"
+                minlength="{{field.min_len}}"
+                required
+              />
+            </div>
+            {% endif %}
+          {% else %}
+            {% if field.field_type == 'textarea' %}
+            <textarea
+              name="{{field.name}}"
+              id=""
+              rows="{{field.rows}}"
+              placeholder="{{field.placeholder}}"
+              minlength="{{field.min_len}}"
+              maxlength="{{field.max_len}}"
+            ></textarea>
+            {% else %}
+            <input
+              type="{{field.field_type}}"
+              placeholder="{{field.placeholder}}"
+              class="input-field"
+              maxlength="{{field.max_len}}"
+              minlength="{{field.min_len}}"
+            />
+            </div>
+          {% endif %}
+
+          {% endif %} {% endfor %}
+        </div>
+        <div id="form-submit">
+          <button type="submit">{{form.submit}}</button>
+        </div>
+      </form>
+    </section>
+  </div>
+</main>
+
+{% endblock %}

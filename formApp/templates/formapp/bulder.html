@@ -1,0 +1,99 @@
+{% extends 'main.html' %} {% block content %}
+<main class="wrapper form-build py-12">
+  <div class="form-save"><button type="button" onclick="handleSubmit()">Save</button></div>
+  <div class="content">
+    <section id="form-toolbar">
+      <div>
+        <div class="head"><span draggable="true">Form Fields</span></div>
+      </div>
+      <ul class="form-fields-list">
+        <li draggable="true" ondragend="addToForm('TEXT')">
+          <small>aa</small>
+          <span>Text</span>
+        </li>
+        <li draggable="true" ondragend="addToForm('EMAIL')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+            />
+          </svg>
+
+          <span>Email</span>
+        </li>
+        <li draggable="true" ondragend="addToForm('NUMBER')">
+          <small>123</small>
+
+          <span>Number</span>
+        </li>
+        <li draggable="true" ondragend="addToForm('PASSWORD')">
+          <small>@*#</small>
+
+          <span>Password</span>
+        </li>
+
+        <li draggable="true" ondragend="addToForm('TEXTAREA')">
+          <small>Aa</small><span>Textarea</span>
+        </li>
+
+        <li draggable="true" ondragend="addToForm('IMAGE')">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+            />
+          </svg>
+
+          <span>Image</span>
+        </li>
+      </ul>
+    </section>
+    <section id="builder-template">
+      <div id="form-builder" class="flex flex-ai-s flex-jc-c">
+        <div
+          id="form"
+          style="display: flex; flex-direction: column; justify-content: space-between"
+        >
+          <input type="hidden" id="FORMID" value="{{form.id}}" />
+          <div
+            id="form-title"
+            class="form-element"
+            onclick="editTitle(event,'TITLE')"
+            style="padding: 22px; font-size: 22px; border-bottom: 1px solid #b7b7b7"
+          >
+            <span id="form-title-value">{{form.name}}</span>
+          </div>
+          <div id="form-elements" style="flex-grow: 1"></div>
+          <div id="form-submit">
+            <button type="button" onclick="editButton(event,'SUBMITBTN')">{{form.submit}}</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="properties">
+      <div>
+        <div class="head"><span>Form Properties</span></div>
+      </div>
+      <div id="properties-pannel">
+        <span class="help-text">Select element to edit</span>
+      </div>
+    </section>
+  </div>
+</main>
+{% endblock %}

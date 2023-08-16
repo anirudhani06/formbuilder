@@ -1,0 +1,15 @@
+{% extends 'main.html' %} {% block content %}
+<main class="wrapper dashboard py-12">
+  <ul class="content">
+    {% for form in forms %}
+    <li>
+      <span class="name">{{form.name}}</span>
+      <div>
+        <a href="{% url 'form' form.id %}" class="view">view</a>
+        <a href="{% url 'delete' form.id %}" class="view" style="background-color: red">delete</a>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
+{% endblock %}

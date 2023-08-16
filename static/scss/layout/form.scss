@@ -1,0 +1,62 @@
+@use '../utils' as *;
+
+main.form {
+  .content {
+    min-height: 80vh;
+
+    #form-template {
+      height: 100%;
+      #form {
+        margin: 0 auto;
+        width: rem(650);
+        min-height: rem(200);
+        background-color: $ColorPrimary;
+        box-shadow: 0 0 10px #3b3b3b0f;
+        padding-bottom: rem(32);
+
+        #form-elements {
+          .form-control {
+            position: relative;
+            padding: 12px 22px;
+            font-size: 22px;
+            cursor: pointer;
+            display: block;
+
+            label {
+              font-size: rem(16);
+              display: block;
+              cursor: pointer;
+            }
+            input,
+            textarea {
+              outline: transparent;
+              width: 100%;
+              padding: rem(8);
+              border-radius: rem(4);
+              border: 1px solid $ColorGrayLight;
+            }
+            input[type='number'] {
+              appearance: none;
+            }
+          }
+        }
+        #form-submit {
+          padding-top: rem(32);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          button {
+            padding: rem(12) rem(32);
+            border: none;
+            outline: transparent;
+            background-color: $ColorMain;
+            border-radius: rem(4);
+            cursor: pointer;
+            font-size: $f-md;
+            color: $ColorPrimary;
+          }
+        }
+      }
+    }
+  }
+}

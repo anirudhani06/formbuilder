@@ -1,0 +1,28 @@
+@use '../utils' as *;
+
+main.dashboard {
+  .content {
+    display: grid;
+
+    gap: rem(16);
+
+    li {
+      background-color: $ColorPrimary;
+      padding: rem(12);
+      border-radius: rem(4);
+      box-shadow: 0 0 10px #00000018;
+      width: rem(500);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .view {
+        background-color: $ColorMain;
+        padding: rem(4) rem(12);
+        color: $ColorPrimary;
+        border-radius: rem(4);
+        font-size: $f-sm;
+      }
+    }
+  }
+}
